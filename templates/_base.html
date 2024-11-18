@@ -16,7 +16,7 @@
 <body>
     <header class="navbar navbar-expand-sm bg-white border-bottom shadow-sm">
         <ul class="nav navbar-brand px-3">
-            <li class="nav-item"><a class="nav-link font-weight-normal text-dark" href="{% url 'home' %}">Notes</a></li>
+            <li class="nav-item"><a class="nav-link font-weight-normal text-dark" href="{% url 'home' %}">Polls</a></li>
         </ul>
 
         <button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -27,11 +27,11 @@
             <ul class="nav ms-auto px-3 align-items-center">
                 <li class="nav-item"><a class="nav-link text-dark" href="{% url 'about' %}">About</a></li>
                 {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link text-dark" href="{% url 'logout' %}">Logout</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="{% url 'account_logout' %}">Logout</a></li>
                 {% else %}
-                <li class="nav-item"><a class="nav-link text-dark" href="{% url 'login' %}">Login</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="{% url 'account_login' %}">Login</a></li>
                 <li class="nav-item"><button class="btn btn-outline-primary"><a class="nav-link"
-                            href="{% static 'signup' %}">Sign Up</a></button></li>
+                            href="{% url 'account_signup' %}">Sign Up</a></button></li>
                 {% endif %}
             </ul>
         </div>
